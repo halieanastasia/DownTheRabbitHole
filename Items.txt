@@ -1,0 +1,146 @@
+Name:Null Item
+Long Description:Null
+Short Description:Null
+Item Type:Null Item
+*****
+Name:Garden Key
+Long Description:An ornate golden key that glimmers warmly. The golden vines make you think it unlocks doors leading to a garden.  
+Short Description:A key to the garden
+Item Type:Key
+*****
+Name:Cottage Key
+Long Description:A sturdy brass key. It looks like it unlocks doors leading to a cottage.  
+Short Description:A key to the cottage
+Item Type:Key
+*****
+Name:Mushroom Key
+Long Description:A strange key shaped like a mushroom. It looks like it unlocks doors leading to a mushroom forest.  
+Short Description:A key to the mushroom forest
+Item Type:Key
+*****
+Name:Milk
+Long Description:A carton of milk. It looks like it has a smiling cat on the front of it.  
+Short Description:A carton of milk
+Item Type:Gift
+*****
+Name:Butter
+Long Description:A block of the creamiest butter you've ever seen.  
+Short Description:A block of butter
+Item Type:Gift
+*****
+Name:Faux Mock Turtle Soup
+Long Description:A steaming bowl of rich, savory soup, echoing the Mock Turtle's lamentations. Though not made from a real Mock Turtle, it captures the essence of his melancholy tales.  
+Short Description:A bowl of imitation Mock Turtle Soup
+Item Type:Gift
+*****
+Name:Pocket Watch
+Long Description:A little golden pocket watch on a thin gold chain. Its clock face appears to be constellations rather than hours of the day.  
+Short Description:A golden astrological watch
+Item Type:Gift
+*****
+Name:Kid Gloves
+Long Description:A pair of soft white cotton kid gloves.  
+Short Description:A pair of kid gloves
+Item Type:Gift
+*****
+Name:Red Painted Rose
+Long Description:A rose that was once white, haphazardly painted in bright red. Specks of paint still drip from its petals.  
+Short Description:A painted red rose
+Item Type:Gift
+*****
+Name:Tart
+Long Description:A tempting little tart with a heart-shaped vent revealing strawberry filling. It looks sweet enough to soften even the most volitile tempers.
+Short Description:A strawberry tart
+Item Type:Gift
+*****
+Name:Queen's Spectacles
+Long Description:A fine pair of golden spectacles with delicate round rims.  
+Short Description:The Queen's spectacles
+Item Type:Gift
+*****
+Name:Daisy Chain
+Long Description:A daisy chain made by your sister and placed upon your head while you were sleeping.  
+Short Description:A daisy chain
+Item Type:Treasure
+Points:50
+*****
+Name:Looking Glass
+Long Description:A silver handheld looking glass. Its surface appears to ripple, and the girl looking back at you doesn't appear quite right.  
+Short Description:A curious looking glass
+Item Type:Treasure
+Points:200
+*****
+Name:Music Box
+Long Description:An intricate little wooden music box. Although it is playing an odd song, it almost sounds like *Twinkle Twinkle Little Star*, but the lyrics are *Twinkle Twinkle Little Bat*.  
+Short Description:A strange wooden music box
+Item Type:Treasure
+Points:200
+*****
+Name:Fan
+Long Description:A dainty paper fan painted with swirling motifs of playing cards.  
+Short Description:A dainty fan
+Item Type:Treasure
+Points:50
+*****
+Name:Hookah
+Long Description:A hookah crafted from deep indigo glass embellished with gold. The violet smoke billowing from it is shaped like ghostly butterflies.  
+Short Description:A purple hookah
+Item Type:Treasure
+Points:200
+*****
+Name:Hedgehog
+Long Description:An adorable, prickly hedgehog used in a most unusual croquet match.  
+Short Description:A little hedgehog
+Item Type:Treasure
+Points:200
+*****
+Name:Guinea Pig
+Long Description:A sweet, squeaking guinea pig.  
+Short Description:A little guinea pig
+Item Type:Treasure
+Points:250
+*****
+Name:Teapot
+Long Description:A porcelain teapot with delicate golden details. No matter how much time passes, the tea never seems to cool.  
+Short Description:A porcelain teapot 
+Item Type:Treasure
+Points:100
+*****
+Name:Lost Courtier Diamond
+Long Description:A brilliant diamond lost by one of the Queen's courtiers. It glimmers with an ethereal blue light.  
+Short Description:A lost courtier diamond
+Item Type:Treasure
+Points:250
+*****
+Name:King's Crown
+Long Description:A golden crown adorned with heart-shaped rubies.  
+Short Description:The King of Heart's crown
+Item Type:Treasure
+Points:500
+*****
+Name:Hatter's Hat
+Long Description:A peculiarly shaped top hat.  
+Short Description:The Mad Hatter's hat
+Item Type:Treasure
+Points:100
+*****
+Name:Drink Me Bottle
+Long Description:A glass bottle with an old-fashioned label that is slightly curling back at the edges. *Drink Me* is scrawled across the label in elegant cursive. The contents of the bottle are a sloshing purple potion that appears to glow slightly.  
+Short Description:A potion that makes you shrink
+Item Type:Key Item
+*****
+Name:Eat Me Cake
+Long Description:A little blue cake with *Eat Me* written across it.  
+Short Description:A piece of cake that makes you grow
+Item Type:Key Item
+*****
+Name:Marmalade Jar
+Long Description:A broken jar of marmalade. It is sharp and still a little sticky.  
+Short Description:A broken jar of marmalade
+Item Type:Weapon
+*****
+Name:Ancient Sword
+Long Description:A short sword with a silver blade that hums with forgotten power, likely from the ancient-looking runes etched into its hilt.  
+Short Description:An ancient short sword
+Item Type:Weapon
+*****

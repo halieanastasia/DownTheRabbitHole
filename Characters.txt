@@ -1,0 +1,85 @@
+Name:Null Character
+Long Description:Null
+Short Description:Null
+Friendship Score:0
+*****
+Name:The Cheshire Cat
+Long Description:A cat with a mischievous grin, he seems to be growing more and less transparent. There is a spark in his eye that makes you feel like he is teasing you.
+Short Description:The cat with a mischievous grin
+Friendship Score:0
+Hit Points:60
+Attack Damage:25
+Gifts:Milk-Butter-Faux Mock Turtle Soup-Pocket Watch-Kid Gloves-Red Painted Rose-Tart-Queen's Spectacles
+*****
+Name:The Queen of Hearts
+Long Description:A queen dripping with heart-shaped rubies, her face is bright red, and she appears angry.
+Short Description:The Queen of Wonderland
+Friendship Score:0
+Hit Points:80
+Attack Damage:30
+Gifts:Tart-Queen's Spectacles-Red Painted Rose-Milk-Butter-Faux Mock Turtle Soup-Pocket Watch-Kid Gloves
+*****
+Name:The Mad Hatter
+Long Description:An eccentric hatter, the look in his wild eyes makes him appear quite mad.
+Short Description:The eccentric hatter
+Friendship Score:0
+Hit Points:70
+Attack Damage:25
+Gifts:Red Painted Rose-Tart-Faux Mock Turtle Soup-Pocket Watch-Kid Gloves-Milk-Butter-Queen's Spectacles
+*****
+Name:The March Hare
+Long Description:An erratic hare, who appears to believe it is always March.
+Short Description:The erratic March hare
+Friendship Score:0
+Hit Points:70
+Attack Damage:25
+Gifts:Kid Gloves-Pocket Watch-Faux Mock Turtle Soup-Milk-Butter-Red Painted Rose-Tart-Queen's Spectacles
+*****
+Name:The White Rabbit
+Long Description:A nervous-looking white rabbit with pink eyes and an iridescent pocket watch.
+Short Description:A jittery white rabbit
+Friendship Score:0
+Hit Points:70
+Attack Damage:25
+Gifts:Pocket Watch-Kid Gloves-Faux Mock Turtle Soup-Red Painted Rose-Tart-Queen's Spectacles-Milk-Butter
+*****
+Name:The Caterpillar
+Long Description:A blue and purple-spotted caterpillar, he smells like sweet, minty smoke.
+Short Description:A blue and purple caterpillar
+Friendship Score:0
+Hit Points:70
+Attack Damage:25
+Gifts:Queen's Spectacles-Faux Mock Turtle Soup-Pocket Watch-Milk-Butter-Kid Gloves-Red Painted Rose-Tart
+*****
+Name:The Duchess
+Long Description:A sharp-tongued duchess with an odd fondness for pepper.
+Short Description:A pepper-loving duchess
+Friendship Score:0
+Hit Points:80
+Attack Damage:30
+Gifts:Tart-Kid Gloves-Faux Mock Turtle Soup-Pocket Watch-Red Painted Rose-Queen's SpectaclesMilk-Butter
+*****
+Name:The Soldier
+Long Description:A loyal card soldier in the Queens service.
+Short Description:A card soldier
+Friendship Score:0
+Hit Points:80
+Attack Damage:30
+Gifts:Red Painted Rose-Tart-Queen's Spectacles-Milk-Butter-Faux Mock Turtle Soup-Pocket Watch-Kid Gloves
+*****
+Name:The Gryphon
+Long Description:A sleepy-looking gryphon with the head of an eagle and the body of a lion, you dont like the look of him.
+Short Description:A mythical gryphon
+Friendship Score:0
+Hit Points:80
+Attack Damage:35
+Gifts:Faux Mock Turtle Soup-Tart-Milk-Butter-Pocket Watch-Kid Gloves-Red Painted Rose-Queen's Spectacles
+*****
+Name:The Mock Turtle
+Long Description:A melancholy mock turtle, he is lamenting his previous life as a real turtle.
+Short Description:A melancholy turtle
+Friendship Score:0
+Hit Points:70
+Attack Damage:25
+Gifts:Butter-Pocket Watch-Kid Gloves-Red Painted Rose-Tart-Queen's Spectacles-Milk-Faux Mock Turtle Soup
+*****

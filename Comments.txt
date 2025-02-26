@@ -1,0 +1,1414 @@
+#pragma once
+//Character class:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Accessor and Mutator functions of the Character class
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+void Character::setName(std::string n)
+{
+	name = n;
+}
+
+std::string Character::getName() 
+{ 
+	return name; 
+}
+
+void Character::setDescription(std::string d) 
+{
+	description = d; 
+}
+
+std::string Character::getDescription() 
+{ 
+	return description; 
+}
+
+void Character::setReturnDescription(std::string rD) 
+{ 
+	returnDescription = rD;
+}
+
+std::string Character::getReturnDescription() 
+{ 
+	return returnDescription; 
+}
+
+void parseField(const std::string& label, const std::string value, Character& character)
+{
+	// If either field is empty print error
+	if (label.empty() || value.empty())
+	{
+		std::cerr << "Invalid line format for label: \"" << label << "\" with value: \"" << value << "\"\n";
+		return; // Skip lines with an invalid format  
+	}
+	// Check the label and store the data in the appropriate tempCharacter attribute
+	else if (label == "Name")
+	{
+		character.setName(value);
+		//std::cout << tempCharacter.getName();
+	}
+	else if (label == "Description")
+	{
+		character.setDescription(value);
+		//std::cout << tempCharacter.getDescription();
+	}
+	else if (label == "Return Description")
+	{
+		character.setReturnDescription(value);
+		//std::cout << tempCharacter.getReturnDescription();
+	}
+	else if (label == "IsEnemy")
+	{
+		if (value == "True")
+		{
+			character.setIsEnemy(true);
+		}
+		else
+		{
+			character.setIsEnemy(false);
+		}
+	}
+	else
+		std::cerr << "Unexpected label: \"" << label << "\"\n";
+}
+
+ 
+// the parseField function is used to parse the data from the character data file
+void parseField(const std::string& label, const std::string value, Character& character)
+{
+	// If either field is empty print error
+	if (label.empty() || value.empty())
+	{
+		std::cerr << "Invalid line format for label: \"" << label << "\" with value: \"" << value << "\"\n";
+		return; // Skip lines with an invalid format  
+	}
+	// Check the label and store the data in the appropriate tempCharacter attribute
+	else if (label == "Name")
+	{
+		character.setName(value);
+		//std::cout << tempCharacter.getName();
+	}
+	else if (label == "Description")
+	{
+		character.setDescription(value);
+		//std::cout << tempCharacter.getDescription();
+	}
+	else if (label == "Return Description")
+	{
+		character.setReturnDescription(value);
+		//std::cout << tempCharacter.getReturnDescription();
+	}
+	else if (label == "IsEnemy")
+	{
+		if (value == "True")
+		{
+			character.setIsEnemy(true);
+		}
+		else
+		{
+			character.setIsEnemy(false);
+		}
+	}
+	else
+		std::cerr << "Unexpected label: \"" << label << "\"\n";
+}
+
+// The getCharactersFromFile function reads the character data from the character file and stores each character as an element in the characterSet vector
+void CharacterSet::getCharactersFromFile(const std::string& filename)
+{
+	std::ifstream inputFile(filename); // Open file containing character data
+	
+	if (!inputFile) // Check that file was opened properly
+	{
+		std::cerr << "The character file could not be opened, ending the game...";
+		exit(EXIT_FAILURE); // Source: https://www.geeksforgeeks.org/exit-codes-in-c-c-with-examples/
+	}
+
+	std::string line; // Store each line
+	Character tempCharacter; // Create a temporary Character object to store the character data being read from the file
+
+	while (std::getline(inputFile, line)) // Read line by line
+	{
+		std::stringstream lineStream(line); // Prepare current line for parsing
+		std::string label, input; // label: store the data identifier, input: store the corresponding value
+			
+		std::getline(lineStream, label, ':'); // Parse the label up to the colon character (':')
+		std::getline(lineStream, input);
+
+		// Check if the label denotes the end of the current character
+		if (label == "*****")
+		{
+			if (tempCharacter.getName() == "Undefined" || tempCharacter.getDescription() == "Undefined" || tempCharacter.getReturnDescription() == "Undefined")
+			{
+				std::cerr << "Skipping incomplete character data\n";
+			}
+			else
+			{
+				characterSet.push_back(tempCharacter); // Store the tempCharacter object in the characterSet vector
+			}
+			tempCharacter = Character(); // Clear the tempCharacter object
+		}
+		else
+		{
+			parseField(label, input, tempCharacter);
+		}
+	}
+	toString();
+}
+
+
+/*******************************************************************************************************************************************************************************************
+* The CharacterSet Class
+* Represents all of the characters in the game
+*******************************************************************************************************************************************************************************************/
+
+// The Default Constructor for the CharacterSet class
+CharacterSet::CharacterSet(std::string fileName)
+{
+	//getCharactersFromFile(fileName);
+
+	GameObjectSet<Character> set(fileName);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Accessor and Mutator functions of the CharacterSet class
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Utility functions of the Character class
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+void CharacterSet::toString()
+{
+	for (Character character : characterSet)
+	{
+		character.toString();
+		std::cout << "\n";
+	}
+}
+
+
+
+//Game Object class:
+template<typename T>
+GameObjectSet<T>::GameObjectSet(std::string fileName)
+{
+	getGameObjectSetFromFile(fileName);
+}
+
+template<typename T>
+// the parseField function is used to parse the data from the character data file
+void parseField(const std::string& label, const std::string value, GameObject& gameObject)
+{
+	// If either field is empty print error
+	if (label.empty() || value.empty())
+	{
+		std::cerr << "Invalid line format for label: \"" << label << "\" with value: \"" << value << "\"\n";
+		return; // Skip lines with an invalid format  
+	}
+	// Check the label and store the data in the appropriate tempCharacter attribute
+	else if (label == "Name")
+	{
+		gameObject.setName(value);
+		//std::cout << tempCharacter.getName();
+	}
+	else if (label == "Description")
+	{
+		gameObject.setDescription(value);
+		//std::cout << tempCharacter.getDescription();
+	}
+	else if (label == "Return Description")
+	{
+		gameObject.setReturnDescription(value);
+		//std::cout << tempCharacter.getReturnDescription();
+	}
+
+}
+
+template<typename T>
+void GameObjectSet<T>::getGameObjectSetFromFile(const std::string& filename)
+{
+	std::ifstream inputFile(filename); // Open file containing character data
+
+	if (!inputFile) // Check that file was opened properly
+	{
+		std::cerr << "The character file could not be opened, ending the game...";
+		exit(EXIT_FAILURE); // Source: https://www.geeksforgeeks.org/exit-codes-in-c-c-with-examples/
+	}
+
+	std::string line; // Store each line
+	T tempGameObject; // Create a temporary Character object to store the character data being read from the file
+
+	while (std::getline(inputFile, line)) // Read line by line
+	{
+		std::stringstream lineStream(line); // Prepare current line for parsing
+		std::string label, input; // label: store the data identifier, input: store the corresponding value
+
+		std::getline(lineStream, label, ':'); // Parse the label up to the colon character (':')
+		std::getline(lineStream, input);
+
+		// Check if the label denotes the end of the current character
+		if (label == "*****")
+		{
+			if (tempGameObject.getName() == "Undefined" || tempGameObject.getDescription() == "Undefined" || tempGameObject.getReturnDescription() == "Undefined")
+			{
+				std::cerr << "Skipping incomplete character data\n";
+			}
+			else
+			{
+				gameObjectSet.push_back(tempGameObject); // Store the tempCharacter object in the characterSet vector
+			}
+			tempGameObject = GameObject(); // Clear the tempCharacter object
+		}
+		else
+		{
+			parseField(label, input, tempGameObject);
+		}
+	}
+	toString(); // Debugging
+}
+
+template<typename T>
+void GameObjectSet<T>::toString()
+{
+	for (auto gameObject : gameObjectSet)
+	{
+		gameObject.toString();
+		std::cout << "\n";
+	}
+}
+
+
+template GameObjectSet<Character> GameObjectSet<Character>();
+
+
+// Locations class
+
+// Sets the next locations for all entrances in all locations based on matching names
+// This function updates each Door object in the entrances of a Location
+// by matching the Door's target Location name with the actual Location object.
+void setEntrances(std::vector<Location>& allLocations)
+{
+	for (Location& eachLocation : allLocations) // Iterate over all locations
+	{
+		for (Door& entranceDoor : eachLocation.getEntrances())  // Iterate over each entrance of the current location
+		{
+
+			// Search the allLocations vector for a location with a matching name
+			// Returns the index or -1 if not found
+			int index = searchVector(allLocations, entranceDoor.getNextLocation());
+
+			// Error handling if the location was not found
+			std::string errorMessage = "Error: No matching location found for " + entranceDoor.getNextLocation().getName();
+			criticalErrorCheck(errorMessage, index == -1);
+
+			// If the location is found, update the entranceDoor’s nextLocation attribute to the corresponding Location in allLocations
+			entranceDoor.setNextLocation(allLocations[index]);
+		}
+	}
+}
+
+// Sets the next locations for all exits in all locations based on matching names
+// This function updates each Door object in the exits of a Location
+// by matching the Door's target Location name with the actual Location object.
+void setExits(std::vector<Location>& allLocations)
+{
+	for (Location& eachLocation : allLocations) // Iterate over all locations
+	{
+		for (Door& exitDoor : eachLocation.getExits())  // Iterate over each exit of the current location
+		{
+
+			// Search the allLocations vector for a location with a matching name
+			// Returns the index or -1 if not found
+			int index = searchVector(allLocations, exitDoor.getNextLocation());
+
+			// Error handling if the location was not found
+			std::string errorMessage = "Error: No matching location found for " + exitDoor.getNextLocation().getName();
+			criticalErrorCheck(errorMessage, index == -1);
+			
+			// If the location is found, update the exitDoor’s nextLocation attribute to the corresponding Location in allLocations
+			exitDoor.setNextLocation(allLocations[index]);
+		}
+	}
+}
+
+// Used to set the entrances and exits of all the game Locations once the set has been created
+void setEntrancesAndExits(std::vector<Location>& allLocations)
+{
+	setEntrances(allLocations);
+	setExits(allLocations);
+}
+
+void setLocation(std::vector<Location> allLocations, Door door)
+{
+	// Search the allLocations vector for a location with a matching name
+	// Returns the index or -1 if not found
+	int index = searchVector(allLocations, door.getNextLocation());
+
+	// Error handling if the location was not found
+	std::string errorMessage = "Error: No matching location found for " + door.getNextLocation().getName();
+	criticalErrorCheck(errorMessage, index == -1);
+
+	// If the location is found, update the exitDoor’s nextLocation attribute to the corresponding Location in allLocations
+	door.setNextLocation(allLocations[index]);
+}
+
+
+// Used to set the entrances of all the game Locations once the set has been created
+void setEntrances(GameObjectSet<Location>& allLoc)
+{
+	Door door;
+	for (Location& loc : allLoc)
+	{
+		for (std::string entName : loc.getEntranceNames())
+		{
+			for (Location newLoc : allLoc)
+			{
+				if (entName == newLoc.getName())
+				{
+					door.setDirection("North");
+					door.setNextLocation(newLoc);
+					loc.setEntrance(door);
+					//door.getNextLocation().toString();
+				}
+			}
+		}
+	}
+}
+
+// Used to set the exits of all the game Locations once the set has been created
+void setExits(GameObjectSet<Location>& allLoc)
+{
+	Door door;
+	for (Location& loc : allLoc)
+	{
+		for (std::string exName : loc.getExitNames())
+		{
+			for (Location newLoc : allLoc)
+			{
+				if (exName == newLoc.getName())
+				{
+					door.setDirection("North");
+					door.setNextLocation(newLoc);
+					loc.setExit(door);
+					//door.getNextLocation().toString();
+				}
+			}
+		}
+	}
+} 
+
+// GameObjectSet
+
+// Loop through the GameObject set and prints each GameObject
+template <typename T>
+void GameObjectSet<T>::print()
+{
+	for (auto gameObject : gameObjectSet)
+	{
+		gameObject.print();
+		std::cout << "\n";
+	}
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Accessor and Mutator functions of the Locations class
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+template<typename T>
+std::vector<T> GameObjectSet<T>::getGameObjectSet()
+{
+	return gameObjectSet;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Utility functions of the GameObjectSet class
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+template<typename T>
+T& GameObjectSet<T>::operator[](size_t index)
+{
+	if (index >= gameObjectSet.size())
+	{
+		throw std::out_of_range("Index out of range");
+	}
+	return gameObjectSet[index];
+}
+
+// Iterator class for GameObjectSet borrowed from Assignment3Question6
+template<class T>
+class GameObjectSet<T>::Iterator
+{
+	// Using (to increase performance with STL algorithms) (Brokken, p. 879)
+	using iterator_category = std::forward_iterator_tag; // Defines the iterator category as a forward iterator
+	using difference_type = std::ptrdiff_t; // Define the difference type to identify the distance between iterator steps
+	using value_type = T; // Set the type of object that the iterator iterates over to a template type
+	using pointer = value_type*; // Set the pointer type used for element access to Template
+	using reference = value_type&; // Set the reference type used for element access to Template
+
+private:
+	pointer currentElement;
+
+public:
+	// Constructors
+	Iterator() : currentElement(nullptr) {} // Default constructor
+	Iterator(pointer ptr) : currentElement(ptr) {} // Parameterized constructor that sets currentElement to a pointer
+
+	// Custom Operators
+	Iterator& operator++() { currentElement++; return *this; } // Pre-increment operator (Brokken, p. 868)
+	Iterator& operator++(int) { Iterator temp = *this; ++(*this); return temp; } // Post-increment operator (Brokken, p. 868)
+	reference operator*() { return *currentElement; } // Dereference operator
+	pointer operator->() { return currentElement; } // Arrow operator
+
+	// Friend Functions
+	friend bool operator==(const Iterator& left, const Iterator& right) { return left.currentElement == right.currentElement; } // Equality operator
+	friend bool operator!=(const Iterator& left, const Iterator& right) { return !(left == right); } // Inequality operator
+};
+
+class GameBuilder
+{
+
+};
+
+
+template <typename T> 
+class GameObjectSet
+{
+private:
+	// Iterator class to allow iteration over the gameObjectSet elements 
+	class Iterator; // Borrowed from Assignment3Question6
+	
+	// Vector to hold a set of GameObjects
+	std::vector<T> gameObjectSet;
+
+public:
+	// Constructors
+	GameObjectSet() {}; // Default constructor initilaizes an empty GameObjectSet object
+	GameObjectSet(std::string fileName) {getGameObjectSetFromFile(fileName);} // Constructor loads data from specified file
+
+	// Accessor and Mutator functions
+	std::vector<T> getGameObjectSet();
+
+	// Begin and end functions borrowed from Assignment3Question6
+	Iterator begin() { return Iterator(gameObjectSet.data()); } // https://cplusplus.com/reference/vector/vector/data/
+	Iterator end() { return Iterator(gameObjectSet.data() + gameObjectSet.size()); } // Supports end sentinel concept
+
+	T& operator[](size_t index);
+
+	// Check the label and store the data in the appropriate field
+	void parseField(const std::string& label, const std::string value, T& t); 
+	
+	// Populate the gameObjectSet vector with data from a file
+	void getGameObjectSetFromFile(const std::string& filename); 
+	
+	// Loop through the GameObject set and print each GameObject
+	void print(); 
+};
+
+
+/*******************************************************************************************************************************************************************************************
+* Free Utility Functions
+*******************************************************************************************************************************************************************************************/
+
+// Used to search a vector for a specific instance derived from GameObject, ie. Items, Locations, Characters, and Actions
+// Option 1
+//template <typename T>
+//T* findGameObject(std::vector<T>& tVector, const T& target)
+//{
+//	for (T& objToCompare : tVector)
+//	{
+//		if (target.getName() == objToCompare.getName())
+//		{
+//			return &objToCompare; // Return a pointer to the matching object
+//		}
+//	}
+//	return nullptr; // Return nullptr if no match is found
+//}
+
+//Option 3
+class GameObject;
+
+int findGameObject(std::vector<GameObject>& gameObjectVector, const GameObject& target)
+{
+	int index = -1;
+	int count = 0;
+	for (GameObject& objToCompare : gameObjectVector)
+	{
+		if (target.getName() == objToCompare.getName())
+		{
+			index = count;
+			return index; // Return index
+		}
+		else
+		{
+			count++;
+		}
+	}
+	return index; // Return index or return -1 if object is not found
+}
+
+GameObject getGameObjVec()
+{
+	// Convert vector of GameObjectDerived to GameObjectVector
+}
+
+// Option 1
+
+const Location& targetLocation = exitDoor.getNextLocation();
+Location* exLocation = findGameObject(allLocations, targetLocation);
+
+if (!exLocation)
+{
+	std::cerr << "Error: No matching location found for " << exitDoor.getNextLocation().getName() << std::endl;
+	exit(EXIT_FAILURE);
+}
+exitDoor.setNextLocation(*exLocation); // Update the Door's target Location
+
+
+// Option 3
+std::vector<GameObject> gameObjVec = allLocations;
+
+int index = findGameObject(allLocations, exitDoor.getNextLocation());
+
+if (index == -1)
+{
+	std::cerr << "Error: No matching location found for " << exitDoor.getNextLocation().getName() << std::endl;
+	exit(EXIT_FAILURE);
+}
+exitDoor.setNextLocation(allLocations[index]);
+
+
+/*Location location = exitDoor.getNextLocation();
+Location& someLocation = location;
+
+Location* exLocation = findGameObject(allLocations, someLocation);
+
+
+//Location location = *exLocation;
+
+if (exLocation == nullptr)  // Check if location was not found
+{
+	std::cerr << "Error: No matching location found for " << exitDoor.getNextLocation().getName() << std::endl;
+	exit(EXIT_FAILURE);
+}
+else
+{
+	exitDoor.setNextLocation(*exLocation); // Update the Door's target Location
+}
+*/
+			
+//for (Location location : allLocations) // Search for the matching location
+//{
+
+//}
+//// Handle error: no matching location found
+
+
+
+//// Custom getline function 
+//// Ignores leading white space
+//// Searches for a specified delimiter or white space (newline, tab, space)
+//// Used so that text files can be formatted better 
+//void getline();
+//
+//void getline();
+//
+//// Reads until any delimiter (or whitespace) is encountered
+//std::istream& getTokenWithDelimiters(std::istream& input, std::string& output, const std::string& delimiters);
+
+// Reads until any delimiter (or whitespace) is encountered
+std::istream& getTokenWithDelimiters(std::istream& input, std::string& output, const std::string& delimiters) {
+	output.clear();
+	char ch;
+
+	// Skip leading whitespace
+	while (input.get(ch) && std::isspace(static_cast<unsigned char>(ch))) {}
+
+	// Process characters until a delimiter or whitespace is found
+	if (input) {
+		do {
+			if (std::isspace(static_cast<unsigned char>(ch)) || delimiters.find(ch) != std::string::npos) {
+				break;
+			}
+			output += ch;
+		} while (input.get(ch));
+	}
+
+	return input;
+}
+
+Verbs:
+go
+enter
+walk
+pick up
+take
+*****
+Nouns:
+watch
+bottle
+door
+character
+*****
+Directions:
+north
+n
+south
+s
+east
+e
+west
+w
+*****
+
+
+
+//class Key : Item
+//{
+//private:
+//	bool isConsumable = true;
+//	bool isEdible = false;
+//	bool canRespawn = false;
+//};
+//
+//class Gift : Item
+//{
+//private:
+//	bool isConsumable = true;
+//	bool isEdible = true;
+//	bool canRespawn = true;
+//	int amountHungerReplenished;
+//};
+//
+//class Treasure : Item
+//{
+//private:
+//	bool isConsumable = false;
+//	bool isEdible = false;
+//	bool canRespawn = false;
+//	int pointsScored;
+//};
+// 
+//class UsefulItems : Item
+//{
+//private:
+//	//Depends on the specific UsefulItem
+//	bool isConsumable;
+//	bool isEdible;
+//	bool canRespawn; 
+//};
+
+bool Item::useKey(Door& door)
+{
+	door.unlock();
+	std::cout << "The " << door.getDirection() << " door has been unlocked" << std::endl;
+	return true;
+
+	if (itemType == ItemType::Key)
+	{
+		door.unlock();
+		std::cout << "The " << door.getDirection() << " door has been unlocked" << std::endl;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+ Does not remove key from inventory
+bool Item::useKey(Location& location, int direction)
+{
+	if (itemType == ItemType::Key && location.doesDoorExist(direction))
+	{
+		Door& exitDoor = location.getExitDoor(direction);
+		if (!exitDoor.isUnlocked())
+		{
+			exitDoor.unlock();
+			
+			std::cout << "You unlock the " << exitDoor.directionToString() << "ern door" << std::endl;
+		}
+		else
+		{
+			std::cout << "The door was already unlocked" << std::endl;
+		}
+		return true;
+	}
+	else
+	{
+		std::cout << "You could not unlock the door" << std::endl;
+		return false;
+	}
+}
+
+// Does not remove treasure from inventory
+int Item::storeTreasure(Location currentLocation)
+{
+	if (itemType == Treasure && currentLocation.getName() == "Cottage")
+	{
+		std::cout << "The treasure has been placed in the cottage" << std::endl;
+	}
+	else
+	{
+		std::cout << "The treasure cannot be placed here, you must return to your cottage" << std::endl;
+	}
+	return goldValue;
+}
+
+bool Item::giveGift(Character character, Inventory& inventory)
+{
+	if (inventory.isValidItem(*this)) //itemType == Gift && itemType == Treasure
+	{
+		if (isGiftable)
+		{
+			character.receiveGift(*this);
+			std::cout << "You give " << character.getName() << " the " << getName() << std::endl;
+			inventory.removeFromInventory(*this); //check this works :/
+
+			return true;
+		}
+		else
+		{
+			std::cout << getName() << " cannot be given as a gift\n";
+		}
+	}
+	else
+	{
+		std::cout << getName() << " is not in your inventory\n";
+		
+	}
+
+	return false;
+}
+
+	/*bool useKey(Location& location, Door& door, int direction);*/
+	//bool useKey(Location& location, int direction);
+	//int storeTreasure(Location currentLocation);
+	//bool giveGift(Character character, Inventory& inventory);
+
+	
+void Inventory::setUI(Control ui)
+{
+    iUI = ui;
+}
+
+Control Inventory::getUI()
+{
+    return iUI;
+}
+
+void Inventory::setCurrentGame(Game* g)
+{
+    currentGame = g;
+}
+
+Game* Inventory::getCurrentGame()
+{
+    return currentGame;
+}
+
+void Inventory::openInventoryMenu()
+{
+    bool isOpen = true;
+    Item selectedItem;
+    Game* currentGame = iUI.getCurrentGame();
+
+    std::cout << "Inventory:\n";
+    displayInventory();
+
+    while (isOpen)
+    {
+        std::cout << "Enter the name of the item you want to interact with:\n"
+            << "or enter \"close\" to close the inventory menu";
+        // Get input
+        currentGame->setCurrentAction();
+
+        // Check if user wants to close the inventory
+        if (closeInventoryMenu())
+        {
+            isOpen = false;
+            continue;
+        }
+
+        // Select Item
+        // Search inventory for item
+        selectedItem = currentGame->getItem(currentGame->getCurrentAction()[C]);
+        int verb = currentGame->getCurrentAction()[V];
+
+        if (isValidItem(selectedItem))
+        {
+            // Use item
+            if (verb == Use)
+            {
+                useItem(selectedItem);
+            }
+
+            // Drop Item
+            else if (verb == Drop)
+            {
+                removeFromInventory(selectedItem);
+            }
+
+            else if (verb == Gift)
+            {
+
+            }
+        }
+    }
+}
+bool Inventory::closeInventoryMenu()
+{
+    if (currentGame->getCurrentAction()[K] == CloseInventory)
+    {
+        return true;
+    }
+    return false;
+}
+
+// Accessor and Mutator Functions
+void setUI(Control ui);
+Control getUI();
+
+void setCurrentGame(Game* g);
+Game* getCurrentGame();
+
+void openInventoryMenu(); // Opens the inventory management menu
+bool closeInventoryMenu(); // Closes the inventory management menu
+
+const int NULL_ITEM_INDEX = 0;
+bool isOpen;
+
+// Manage actions/ game-state like input class manages check help
+// Attributes
+Control iUI;
+//Actions action;
+Game* currentGame;
+
+void useItem(Item item);
+
+void Inventory::useItem(Item item)
+{
+    //could be used like if(useItem(key)){unlockDoor(key);}
+    // or if(useItem(milk)){ character[cat].giftItem(milk); }
+    
+    // track 
+    int verb, noun; // location, item, character etc...
+    
+    verb = currentGame->getCurrentAction()[V];
+
+    if (isValidItem(item))
+    {
+        //Depending on item type/ attributes (keys are consumed, gifts are consumed, watch is not consumed) 
+        // Check type
+        // Deal with it according to type ie remove from inventory 
+        // return true; // Demonstrates that it was successful 
+        // 
+        // Give item to character - manage by character
+        // Use key to unlock door - managed by location
+        // Place treasure in saferoom - managed by saferoom
+    }
+    //else
+    // print error message (maybe break up is valid)
+    // return false;
+}
+
+
+// Searches the exit vector for a Door object that matches the direction passed
+// Returns the index of the Door object if found, returns -1 if not found
+int Location::getExitIndex(int direction)
+{
+	int index = searchVectorOfDoors(exits, direction);
+	return index;
+}
+
+// Checks if a door that matches the direction passed is present in the exits vector
+// Used to prevent out of range vector exceptions
+bool Location::doesDoorExist(int direction)
+{
+	if (getExitIndex(direction) != -1)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+	int getExitIndex(int direction); // Searches the exits vector for a Door object that matches the direction passed, returns the index of the Door object if found, returns -1 if not found
+
+		bool doesDoorExist(int direction);	// Checks if a door that matches the direction passed is present in the exits vector
+
+		//int Location::getEntranceIndex(int direction)
+//{
+//	int index = searchVectorOfDoors(exits, direction);
+//	return index;
+//}
+
+//bool Location::getEntrance(Door& door, int index)
+//{
+//	if (index > 0 && index < entrances.size())
+//	{
+//		door = entrances[index];
+//		return true;
+//	}
+//	else
+//	{
+//		return false;
+//	}
+//
+
+
+//bool Game::enterDoor(int direction)
+//{
+//	try
+//	{
+//		Door& door = currentLocation -> getExitDoor(direction);
+//
+//		if (door.isUnlocked())
+//		{
+//			//delete &currentLocation;
+//			Location* nextLoc = door.getNextLocation();
+//			setCurrentLocation(nextLoc);
+//			//currentLocation = &nextLoc;
+//			std::cout << "You walk through the door and enter the ";// << nextLoc->getName() << "\n";
+//			return true;
+//		}
+//		else
+//		{
+//			std::cout << "You try to open the door but it is locked\n";
+//		}
+//	}
+//	catch (const std::out_of_range& e)
+//	{
+//		std::cout << e.what() << '\n';
+//	}
+//	catch (const std::exception& e) 
+//	{
+//        std::cerr << "Error: " << e.what() << std::endl;
+//    }
+//	return false;
+//}
+
+//Location loc = *currentLocation;
+
+	///*if (*currentLocation == locations[Meadow])*/
+	//if (loc == locations[Meadow])
+	//{
+	//	meadow();
+	//}
+	//else if (loc == locations[RabbitHole])
+	//{
+	//	enterRabbitHole();
+	//}
+	//else if (loc == locations[LongHallway])
+	//{
+	//	enterLongHallway();
+	//}
+	//else if (loc == locations[Garden])
+	//{
+	//	enterGarden();
+	//}
+	//else if (loc == locations[Cottage])
+	//{
+	//	enterCottage();
+	//}
+	//else
+	//{
+	//	currentLocation = &locations[NullLocation];
+	//}
+
+	//Location loc = *currentLocation;
+
+	/*if (*currentLocation == locations[Meadow])*/
+	
+//// Is it possible to restructure this to a variable parameter list if each parameter is specified via based on the enum name
+//// But make it so you only need to perform the checks needed, like if you only enter a verb and a noun it just tests those and returns true if they are true
+//// Example of a call testAction(Verb Enter, Noun Door);
+//// Returns true if the current action Verb == Enter and the current action Noun == Door
+//// Keywords, Verbs, Nouns, and Directions are all int enums
+//// currentAction is an array that holds a reference to a value of the enums, ie currentAction[ActionIndex::Verb] holds an int that represents the action the user input if the put "enter" is holds Verbs::Enter
+//// idea: write a overloaded function called matched that dests only one condition at a time
+//// so if (testAction(Keywords::NullKeyword, Verbs::Gift, Nouns::Characters, Directions::NullDirection)
+//// would look like if (matches(Verbs::Gift) && matches(Nouns::Characters))
+//
+//bool Game::testAction(Keywords keyword, Verbs verb, Characters noun, Directions direction) 
+//{
+//	bool keywordOK = currentAction[ActionIndex::K] == keyword || Keywords::NullKeyword == keyword;
+//	bool verbOK = currentAction[ActionIndex::V] == verb || Verbs::NullVerb == verb;
+//	bool nounOK = currentAction[ActionIndex::C] == noun || Characters::NullCharacter == noun;
+//	bool directionOK = currentAction[ActionIndex::D] == direction || Directions::NullDirection == direction;
+//
+//	return keywordOK && verbOK && nounOK && directionOK;
+//}
+
+
+
+
+
+
+
+
+
+
+
+		//// Parse direction delimited by ':' 
+		//std::string directionString = "";
+		//std::string doorName = ""; // directionString: store the direction of door, input: store the name of the location the door leads to
+		//std::string shortDescript = "";
+		//std::string longDescript = "";
+		//std::string tag = "";
+
+		//std::stringstream inputStream(value); // Prepare value for parsing
+		//std::getline(inputStream, doorName, ':'); // Parse the inputStream up to the colon char ('-'), store in the direction variable
+		//exitDoor.setName(doorName);
+
+		//std::getline(inputStream, tag, ':');// Parse the inputStream up to the end of the line, store in the nextLocationName variable
+		//std::getline(inputStream, directionString, ':');
+		//if (tag == "Direction")
+		//{
+		//	// Add proper enums/ consider mapping so print function implementation is easier
+		//	if (directionString == "N")
+		//	{
+		//		direction = North;
+		//	}
+		//	else if (directionString == "E")
+		//	{
+		//		direction = East;
+		//	}
+		//	else if (directionString == "S")
+		//	{
+		//		direction = South;
+		//	}
+		//	else if (directionString == "W")
+		//	{
+		//		direction = West;
+		//	}
+		//	else
+		//	{
+		//		direction = NullDirection;
+		//	}
+		//}
+		//exitDoor.setDirection(direction);
+
+
+		//std::getline(inputStream, tag, ':');
+		//std::getline(inputStream, longDescript, ':');
+		//if (tag == "Door Long Description")
+		//{
+		//	//exitDoor.setLongDescription(longDescript);
+		//}
+		//std::getline(inputStream, tag, ':');
+		//std::getline(inputStream, shortDescript, ':');
+		//if (tag == "Door Short Description")
+		//{
+		//	//exitDoor.setShortDescription(shortDescript);
+		//	
+		//}
+		//
+		//std::cout << value << "\n";
+		//std::cout << directionString << "\n";
+		//std::cout << longDescript << "\n";
+		//std::cout << shortDescript << "\n";
+
+		//location.setExit(exitDoor); // push the door object onto the location's exit vector
+
+
+		//if (direction != NullDirection) 
+		//{
+		//	Door door(direction, nextLocation); // Create a door object and set the direction and nextLocation attributes 
+
+
+		//	if (label == "Exit")
+		//	{
+		//		location.setExit(door); // push the door object onto the location's exit vector
+		//	}
+		//	//if (label == "Entrance")
+		//	//{
+		//	//	location.setEntrance(door); // push the door object onto the location's entrance vector
+		//	//}
+		//}
+		//// Else skip adding the entrance
+		//else
+		//{
+		//	std::cout << "Door could not be added\n";
+		//}
+
+		// Explicit instantiation for supported types 
+// Source: https://en.cppreference.com/w/cpp/language/class_template
+//template std::vector<Character> getGameObjectSetFromFile<Character>(const std::string&);
+//template std::vector<Location> getGameObjectSetFromFile<Location>(const std::string&);
+//template std::vector<Item> getGameObjectSetFromFile<Item>(const std::string&);
+
+
+//// Sets the next location attributes for both entrances and exits of all Locations in the game
+//void setEntrancesAndExits(std::vector<Location>& allLocations)
+//{
+//	setEntrances(allLocations);
+//	setExits(allLocations);
+//}
+//
+//// Sets the nextLocation attribute for all doors in the entrances vector of each Location
+//void setEntrances(std::vector<Location>& allLocations)
+//{
+//	for (Location& eachLocation : allLocations) // Iterate over all locations
+//	{
+//		for (Door& entranceDoor : eachLocation.getEntrances())  // Iterate over each entrance of the current location
+//		{
+//			setLocation(allLocations, entranceDoor); // Sets the next location attributes for the entrance doors based on matching names
+//		}
+//	}
+//}
+// Searches a vector for a specified object, by its name
+// Returns the index of the vector if found, if not returns -1
+//int searchVectorOfExit(const std::vector<Location>& vector, Door& door)
+//{
+//	for (int i = 0; i < vector.size(); i++) // Iterates over vector
+//	{
+//		Location* nextLocation = door.getNextLocation();
+//		
+//		std::string name = nextLocation->getName();
+//
+//
+//		// Compares the name of the two objects
+//		if (name == vector[i].getName())
+//		{
+//			return i; // If found return the index
+//		}
+//	}
+//	return -1; // Return -1 if object is not found
+//}
+// Sets the nextLocation attribute for a Door object (entrance or exit) based on matching location names
+// This function updates the Door element in either the entrance or exit vectors of a Location
+// by matching the Door's target Location name with the actual Location object
+//void setLocation(std::vector<Location>& allLocations, Door& door)
+//{
+//	// Search the allLocations vector for a location with a matching name (the door's target location)
+//	// Returns the index or -1 if not found
+//	//int index = searchVectorOfExit(allLocations, door);
+//	int index;
+//	for (int i = 0; i < allLocations.size(); i++) // Iterates over vector
+//	{
+//		Location* nextLocation = door.getNextLocation();
+//
+//		std::string name = nextLocation->getName();
+//
+//
+//		// Compares the name of the two objects
+//		if (name == allLocations[i].getName())
+//		{
+//			index = i; // If found return the index
+//		}
+//	}
+//	index = -1; // Return -1 if object is not found
+//
+//
+//	//decide if this is a good way to handle things
+//	// Error handling if the location was not found
+//	std::string errorMessage = "Error: No matching location found for " + door.getNextLocation()->getName();
+//	bool locationNotFound = index == -1; //Good name? altvarname: fileFailCondition 
+//	criticalErrorCheck(errorMessage, locationNotFound); // Checks if the location was found
+//
+//	// If the location is found, update the exitDoor’s nextLocation attribute to the corresponding Location in allLocations
+//	door.setNextLocation(&allLocations[index]);
+//}
+//
+//// Sets the nextLocation attribute for all doors in the exit vector of each Location
+//void setExits(std::vector<Location>& allLocations)
+//{
+//	for (Location& eachLocation : allLocations) // Iterate over all locations
+//	{
+//		for (Door& exitDoor : eachLocation.getExits())  // Iterate over each exit of the current location
+//		{
+//			setLocation(allLocations, exitDoor);
+//		}
+//	}
+//}
+//// Sets the nextLocation attribute for a Door object (entrance or exit) based on matching location names
+//// This function updates the Door element in either the entrance or exit vectors of a Location
+//// by matching the Door's target Location name with the actual Location object
+//void setLocation(std::vector<Location>& allLocations, Door& door)
+//{
+//	// Search the allLocations vector for a location with a matching name (the door's target location)
+//	// Returns the index or -1 if not found
+//	int index = searchVectorOfExit(allLocations, door);
+//
+//	//decide if this is a good way to handle things
+//	// Error handling if the location was not found
+//	std::string errorMessage = "Error: No matching location found for " + door.getName();
+//	bool locationNotFound = index == -1; //Good name? altvarname: fileFailCondition 
+//	criticalErrorCheck(errorMessage, locationNotFound); // Checks if the location was found
+//
+//	// If the location is found, update the exitDoor’s nextLocation attribute to the corresponding Location in allLocations
+//	door.setNextLocation(&allLocations[index]);
+//}
+//
+//// Sets the nextLocation attribute for all doors in the exit vector of each Location
+//void setExits(std::vector<Location>& allLocations)
+//{
+//	for (Location& eachLocation : allLocations) // Iterate over all locations
+//	{
+//		for (Door& exitDoor : eachLocation.getExits())  // Iterate over each exit of the current location
+//		{
+//			setLocation(allLocations, exitDoor); 
+//		}
+//	}
+//}
+
+//// Adds a Door object to the entrance vector
+//void Location::setEntrance(Door ent)
+//{
+//	entrances.push_back(ent);
+//}
+//
+//// Returns the entrance vector
+//std::vector<Door> Location::getEntrances()
+//{
+//	return entrances;
+//}
+
+void setLocation(std::vector<Location>& allLocations, Door& door);
+void setEntrances(std::vector<Location>& allLocations);
+void setExits(std::vector<Location>& allLocations);
+void setEntrancesAndExits(std::vector<Location>& allLoc);
+
+	//void setNextLocation(Location* l) { nextLocation = l; }
+	//Location* getNextLocation() { return nextLocation; }
+		void setEntrance(Door ent); // Adds a Door object to the entrances vector
+	std::vector<Door> getEntrances(); // Returns the entrances vector
+
+	
+	/*
+	//Working
+	//meadow();
+
+	//enterRabbitHole();
+
+	//
+	//enterLongHallway();
+	//enterGarden();
+	//enterCottage();
+
+
+
+	//while(!quitGame)
+	//{
+		//Location l = getCurrentLocation();
+		//loadCurrentLocation();
+	//}
+	
+	
+	
+	//int index = getRandomCharacter();
+	//characters[index].print();
+	//setCurrentAction();
+	//if (matchRandomCharacter(index))
+	//{
+	//	std::cout << "Test\n";
+	//}
+
+	////std::array<int, 6> a = getCurrentAction();
+
+	////tempRoom();
+	////test();
+
+	////// How do i exit game immediately if user presses quit
+	////while (!quitGame) // i don't think this will actually end the game in the way i want
+	////{
+	//setCurrentLocation(&locations[Meadow]);
+	//loadRoomGameObjects({ &characters[CheshireCat] }, { &items[Milk] });
+	//setCurrentAction();
+
+	////	//playerInventory.openInventoryMenu();
+	////meadow();
+	////	//tests();
+	////} */
+
+			//
+		////Rabbit hole
+		//std::cout << "Current Location: " << currentLocation->getName() << std::endl;
+		//loadCurrentLocation(); // Calls rabbithole()
+		//
+		//// Long Hallway
+		//std::cout << "Current Location: " << currentLocation->getName() << std::endl;
+		//loadCurrentLocation(); //Calls longhallway()
+
+		//std::cout << "Current Location: " << currentLocation->getName() << std::endl;
+		////if (*currentLocation == locations[NullLocation])
+
+		
+//void Game::debugLocations() {
+//	std::vector<Door> exits;
+//	for (int i = 0; i < locations.size(); i++) {
+//		std::cout << "Location: " << i << " : " << locations[i].getName() << std::endl;
+//
+//		exits = locations[i].getExits();
+//		for (int j = 0; i < exits.size(); j++) {
+//			std::cout << "Exit: " << j << " : " << exits[j].getName() << std::endl;
+//
+//			Location nextLoc = exits[j];
+//
+//			std::cout << "Next Location: " << nextLoc.getName() << std::endl;
+//
+//		}
+//	}
+//}
+
+
+bool Game::unlockDoor(Item item, int direction)
+{
+	try
+	{
+		Door& exitDoor = currentLocation->getExitDoor(direction);
+		if (playerInventory.isValidItem(item))
+		{
+			if (item.getItemType() == ItemType::Key)
+			{
+
+				if (!exitDoor.isUnlocked())
+				{
+					exitDoor.unlock();
+					playerInventory.removeFromInventory(item);
+					std::cout << "You unlock the " << exitDoor.directionToString() << "ern door" << std::endl;
+				}
+				else
+				{
+					std::cout << "The door was already unlocked" << std::endl;
+				}
+				return true;
+
+			}
+		}
+		else
+		{
+			std::cout << "You need the " << exitDoor.getDoorName() << " Key to unlock this door\n";
+		}
+	}
+	catch (const std::out_of_range& e)
+	{
+		std::cout << e.what() << '\n'; // Source: https://www.geeksforgeeks.org/exceptionwhat-in-c-with-examples/
+	}
+	return false;
+}
+
+		// Adds the ability to alter the default attributes for any of the item types
+		if (attributes != "")
+		{
+			std::stringstream inputStream(attributes); // Prepare value for parsing
+			std::string consumable = "", edible = "", respawn = ""; // variables to hold parsed values
+
+			std::getline(inputStream, respawn, '\n');
+
+			// Change the value of the attributes if they are labeled true in the file
+			if (stringToBool(consumable))
+			{
+				item.setIsConsumable(true);
+			}
+			if (stringToBool(edible))
+			{
+				item.setIsEdible(true);
+			}
+			if (stringToBool(respawn))
+			{
+				item.setCanRespawn(true);
+			}
+		}
