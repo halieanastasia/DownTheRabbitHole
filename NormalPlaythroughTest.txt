@@ -1,0 +1,916 @@
+C:\Code\COMP 306\AliceInWonderland>g++ -o main Actions.cpp Alice.cpp Characters.cpp Control.cpp FileReader.cpp Game.cpp GameObject.cpp Items.cpp Locations.cpp main.cpp Utilities.cpp
+
+C:\Code\COMP 306\AliceInWonderland>main.exe
+Welcome to a text adventure game based on Alice's Adventures in Wonderland by Lewis Carroll (1865)
+        Type H or Help for instructions
+        Type Q or Quit to end game
+
+Starting game...
+
+You are in a meadow filled with wildflowers the air smells like sunshine and over ripe berries.
+You've just woken up from a long nap in a meadow filled with wildflowers and tall grass.
+ You look around for your sister but she is no where to be found.
+ You notice that while you slept she has placed a daisy crown upon your head.
+ Just when you begin to wake up a white rabbit runs by muttering about the time.
+ How odd, you think, how does he keep track of the time, surely without thumbs he can't hold a pocket watch properly.
+
+What do you want to do next?
+> talk to rabbit
+You start talking to The White Rabbit
+"I am very late", the rabbit exclaims.
+
+What do you want to do next?
+> explore
+You are in a meadow filled with wildflowers the air smells like sunshine and over ripe berries.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *south* there is a trail of tall grass with a trail of rabbit prints leading to the west.
+It looks like it might lead to a rabbit hole
+
+Next you look around to see if there is anyone else here with you:
+A nervous-looking white rabbit with pink eyes and an iridescent pocket watch.
+
+What do you want to do next?
+> hint
+Maybe you should follow the rabbit.
+
+What do you want to do next?
+> follow rabbit
+You follow the rabbit, until you see a rabbit hole.
+You peek over the edge to see if you can see the rabbit
+Your foot slips and you tumble into the rabbit hole
+You start to fall
+Down
+Down
+Down
+You wonder if you will keep falling forever
+You see a jar of marmalade
+You think about how dangerous it is to leave a glass jar lying about...or is it falling about
+Down
+Down
+Down
+Finally you land in what appears to be a giant cupcake, you are sticky but uninjured.
+You are in the bottom of a deep, dark rabbit hole.
+Maybe you should try exploring the area.
+
+What do you want to do next?
+> explore
+You are in the bottom of a deep, dark rabbit hole.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *east* there is a door that glows brightly in contrast with the dark rabbit hole.
+It looks like it might lead to a long hallway
+
+Finally you look around to see if there is anything useful here that you can take with you:
+A broken jar of marmalade. It is sharp and still a little sticky.
+A little golden pocket watch on a thin gold chain. Its clock face appears to be constellations rather than hours of the day.
+
+What do you want to do next?
+> take jar
+You found a broken jar of marmalade
+Your max attack damage has increased to 30.
+
+What do you want to do next?
+> take watch
+You found a golden astrological watch
+
+What do you want to do next?
+> help
+Input instructions
+        This game works by reading your input.
+        It parses out different words and classifies them as a type of action [Keyword, Verb, Character, Location, Item, or Direction ]
+        Then the computer uses that input to figure out what to do next.
+
+        The game only keeps track of the last word entered from each category
+        Therefore it is best to enter actions one at a time
+                Example: The game will read [go north and talk to rabbit], as talk to rabbit
+
+Tips
+        If you want two words to be considered as one entry use a hyphen
+                Example: north-east or south-west
+        To unlock a door you need the right key
+        To unlock a door you must specify the direction, try structuring your response like "Unlock the southern door"
+
+Would you like a list of potential actions? (Yes/ No)
+
+What do you want to do next?
+> yes
+Potential Actions:
+Keywords:
+        end
+        end-game
+        endgame
+        h
+        help
+        hint
+        i
+        instruction
+        instructions
+        invent
+        inventory
+        no
+        q
+        quit
+        score
+        stat
+        stats
+        yes
+Verbs:
+        attack
+        consume
+        drink
+        eat
+        enter
+        examine
+        explore
+        fight
+        follow
+        gift
+        give
+        go
+        look
+        pick
+        pick-up
+        pickup
+        place
+        speak
+        speak-to
+        steal
+        store
+        take
+        talk
+        unlock
+        use
+        view
+        walk
+        walk-through
+Characters:
+        card-soldier
+        cat
+        caterpillar
+        cheshire
+        cheshire-cat
+        duchess
+        gryphon
+        hare
+        hatter
+        mad-hatter
+        march-hare
+        mock-turtle
+        queen
+        rabbit
+        soldier
+        turtle
+        white-rabbit
+Directions:
+        e
+        east
+        eastern
+        n
+        ne
+        north
+        north-east
+        north-west
+        northern
+        nw
+        s
+        se
+        south
+        south-east
+        south-west
+        southern
+        sw
+        w
+        west
+        western
+
+What do you want to do next?
+> go east
+You are in a long hallway with a door on each wall.
+On that long fall down the rabbit-hole you've had a minute to process the fact that you may never be able to go home.
+It might be a good idea to try and make some friends.
+Maybe if you're luck you will find some treasure.
+
+What do you want to do next?
+> explore
+You are in a long hallway with a door on each wall.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *north* there is an arched door with smooth river stones outlining it.
+It looks like it might lead to a cottage
+To the *east* there is a mushroom and moss covered door made from tree bark.
+It looks like it might lead to a mushroom forest
+To the *south* there is a door covered in golden vines. each vine is dotted with delicate flowers inlaid with emeralds.
+It looks like it might lead to a garden
+To the *west* there is a plain door, on the door is a shiny brass plate with the name "w. rabbit" engraved upon it.
+It looks like it might lead to a rabbit hole
+To the *north-east* there is a door that appears to be wearing a top-hat.
+It looks like it might lead to a hare's lawn
+
+Next you look around to see if there is anyone else here with you:
+A cat with a mischievous grin, he seems to be growing more and less transparent. There is a spark in his eye that makes you feel like he is teasing you.
+
+Finally you look around to see if there is anything useful here that you can take with you:
+A carton of milk. It looks like it has a smiling cat on the front of it.
+A pair of soft white cotton kid gloves.
+A dainty paper fan painted with swirling motifs of playing cards.
+
+What do you want to do next?
+> take milk
+You found a carton of milk
+You wonder how anyone would milk a cat, you probably shouldn't drink this.
+
+What do you want to do next?
+> take gloves
+You found a pair of kid gloves
+
+What do you want to do next?
+> take fan
+You found a dainty fan
+All you need now is somewhere to keep your treasures safe.
+
+What do you want to do next?
+> talk cat
+You start talking to The Cheshire Cat
+"I sure am thirsty", the cat purrs.
+
+What do you want to do next?
+> give cat milk
+You give The Cheshire Cat the Milk
+Thank You! I love this!
+It looks like you have befriended the Cheshire Cat.
+They give you a Cottage Key.
+It looks like might unlock the northern exit.
+
+What do you want to do next?
+> unlock north exit
+You unlock the northern exit
+
+What do you want to do next?
+> go north
+You are in a small, clearly abandoned cottage. its a bit dusty and covered in ivy and moss, but it would still make a good place to store your belongings. theres even an area suitable for pets.
+You decide to move in
+Maybe you should check your inventory to see if you have collected any treasures you should store here. They will be safe here.
+
+What do you want to do next?
+> inventory
+Alice's Inventory:
+Cottage Key
+        Item Type: Key
+        Description: A sturdy brass key. It looks like it unlocks doors leading to a cottage.
+Pocket Watch
+        Item Type: Gift
+        Description: A little golden pocket watch on a thin gold chain. Its clock face appears to be constellations rather than hours of the day.
+Kid Gloves
+        Item Type: Gift
+        Description: A pair of soft white cotton kid gloves.
+Daisy Chain
+        Item Type: Treasure
+        Description: A daisy chain made by your sister and placed upon your head while you were sleeping.
+Fan
+        Item Type: Treasure
+        Description: A dainty paper fan painted with swirling motifs of playing cards.
+Marmalade Jar
+        Item Type: Weapon
+        Description: A broken jar of marmalade. It is sharp and still a little sticky.
+
+Cottage Inventory:
+Inventory empty.
+
+What do you want to do next?
+> place daisy chain
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> place fan
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> go east
+You are in  a little clearing in front of a hodgepodge of colourful rooms stacked together haphazardly in the vague shape of a bunny ears. under the cover of an ancient weeping willow, a riotous tea party is underway.
+Maybe you should join the tea party, perhaps someone has some useful information.
+
+What do you want to do next?
+> explore
+You are in  a little clearing in front of a hodgepodge of colourful rooms stacked together haphazardly in the vague shape of a bunny ears. under the cover of an ancient weeping willow, a riotous tea party is underway.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *south* there is a gate leading to a long, twisting path of round stepping stones. moss has begun to creep over the edges, dotted with tiny glowing mushrooms
+It looks like it might lead to a mushroom forest
+To the *west* there is a wooden path
+It looks like it might lead to a cottage
+To the *south-west* there is a plain door.
+It looks like it might lead to a long hallway
+
+Next you look around to see if there is anyone else here with you:
+A melancholy mock turtle, he is lamenting his previous life as a real turtle.
+A blue and purple-spotted caterpillar, he smells like sweet, minty smoke.
+A cat with a mischievous grin, he seems to be growing more and less transparent. There is a spark in his eye that makes you feel like he is teasing you.
+An erratic hare, who appears to believe it is always March.
+An eccentric hatter, the look in his wild eyes makes him appear quite mad.
+
+Finally you look around to see if there is anything useful here that you can take with you:
+A porcelain teapot with delicate golden details. No matter how much time passes, the tea never seems to cool.
+A tempting little tart with a heart-shaped vent revealing strawberry filling. It looks sweet enough to soften even the most volitile tempers.
+A block of the creamiest butter you've ever seen.
+A rose that was once white, haphazardly painted in bright red. Specks of paint still drip from its petals.
+
+What do you want to do next?
+> take teapot
+You found a porcelain teapot
+
+What do you want to do next?
+> take tart
+You found a strawberry tart
+
+What do you want to do next?
+> take butter
+You found a block of butter
+
+What do you want to do next?
+> take rose
+You found a painted red rose
+
+What do you want to do next?
+> give turtle butter
+You give The Mock Turtle the Butter
+Thank You! I love this!
+
+What do you want to do next?
+> give hare gloves
+You give The March Hare the Kid Gloves
+Thank You! I love this!
+
+What do you want to do next?
+> give hatter rose
+You give The Mad Hatter the Red Painted Rose
+Thank You! I love this!
+
+What do you want to do next?
+> talk to turtle
+You start talking to The Mock Turtle
+"We're all mad here. I'm mad. You're mad..."
+Please pass the sugar.
+
+What do you want to do next?
+> talk to hatter
+You start talking to The Mad Hatter
+"We are all a little mad sometimes..."
+They take a bow, you are very confused.
+You notice that when they bowed a mushroom shaped key fell out of who knows where
+They don't seem inclined to pick it up so you do.
+It looks like it unlocks the south exit.
+
+What do you want to do next?
+> talk to hare
+You start talking to The March Hare
+"This tea is delicious."
+
+What do you want to do next?
+> unlock south exit
+You unlock the southern exit
+
+What do you want to do next?
+> explore
+You are in  a little clearing in front of a hodgepodge of colourful rooms stacked together haphazardly in the vague shape of a bunny ears. under the cover of an ancient weeping willow, a riotous tea party is underway.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *south* there is a gate leading to a long, twisting path of round stepping stones. moss has begun to creep over the edges, dotted with tiny glowing mushrooms
+It looks like it might lead to a mushroom forest
+To the *west* there is a wooden path
+It looks like it might lead to a cottage
+To the *south-west* there is a plain door.
+It looks like it might lead to a long hallway
+
+Next you look around to see if there is anyone else here with you:
+A melancholy mock turtle, he is lamenting his previous life as a real turtle.
+A blue and purple-spotted caterpillar, he smells like sweet, minty smoke.
+A cat with a mischievous grin, he seems to be growing more and less transparent. There is a spark in his eye that makes you feel like he is teasing you.
+An erratic hare, who appears to believe it is always March.
+An eccentric hatter, the look in his wild eyes makes him appear quite mad.
+
+What do you want to do next?
+> go south
+You are in a hazy blue forest where the mushrooms have grown taller than the tallest trees.
+Sitting upon a tall mushroom is the biggest blue and purple caterpillar you have ever seen.
+They are smoking a hookah crafted from deep indigo glass embellished with gold. The violet smoke billowing from it is shaped like ghostly butterflies.
+A mischievous disembodied smile, is grinning at you.
+
+What do you want to do next?
+> explore
+You are in a hazy blue forest where the mushrooms have grown taller than the tallest trees.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *north* there is a colourful wooden path, with red roses painted along the sides.
+It looks like it might lead to a hare's lawn
+To the *east* there is a rock wall with a narrow crack running up the center, you might be able to squeeze through.
+It looks like it might lead to a pool of tears
+To the *south-west* there is a golden gate with red roses in the distance, a crisp wind blows from this direction.
+It looks like it might lead to a garden
+To the *west* there is a plain door.
+It looks like it might lead to a long hallway
+
+Next you look around to see if there is anyone else here with you:
+A blue and purple-spotted caterpillar, he smells like sweet, minty smoke.
+A cat with a mischievous grin, he seems to be growing more and less transparent. There is a spark in his eye that makes you feel like he is teasing you.
+
+Finally you look around to see if there is anything useful here that you can take with you:
+A hookah crafted from deep indigo glass embellished with gold. The violet smoke billowing from it is shaped like ghostly butterflies.
+A glass bottle with an old-fashioned label that is slightly curling back at the edges. *Drink Me* is scrawled across the label in elegant cursive. The contents of the bottle are a sloshing purple potion that appears to glow slightly.
+A little blue cake with *Eat Me* written across it.
+
+What do you want to do next?
+> take hookah
+You found a purple hookah
+
+What do you want to do next?
+> take bottle
+You found a potion that makes you shrink
+
+What do you want to do next?
+> take cake
+You found a piece of cake that makes you grow
+
+What do you want to do next?
+> talk to caterpillar
+You start talking to The Caterpillar
+The caterpillar squints at you through a cloud of purple ghostly butterflies.
+You are not sure if he can actually see you.
+
+"Who are you?" demanded the Caterpillar.
+"I hardly know," said Alice, "because I'm not myself."
+"You must be yourself!" retorted the Caterpillar, quite argumentatively.
+
+You have never met such a contrarian caterpillar.
+You quickly end the conversation.
+
+What do you want to do next?
+> talk to cat
+You start talking to The Cheshire Cat
+The Cheshire Cat materializes peering down at you from the bough of a tall mushroom tree.
+You decide to ask the cat for directions.
+"Well it depends where you would like to go, but I would like to go swimming."
+"But you're a cat"...
+"And you're a little girl", replies the cat.
+You are very confused.
+
+What do you want to do next?
+> eat cake
+You start to grow. Tears begin to trickle down your cheeks and towards the crack in the east wall.
+The more you grow the more you cry.
+You peer through the crack and see a vast pool of your tears.
+You see an isle far off in the distance, but now you are much too large to fit through the crack.
+
+The Cheshire cat materializes beside you, giving you quite a fright
+"I'm off for a swim", he purrs
+Before they swim off they give you a Garden Key.
+It looks like might unlock the south-west exit.
+
+What do you want to do next?
+> unlock south-west
+You unlock the south-western exit
+
+What do you want to do next?
+> go east
+You are unable to go this way right now
+
+What do you want to do next?
+> drink potion
+You shrink back down to size, maybe you can fit through the crack in the wall now
+
+What do you want to do next?
+> go east
+You are in a vast pool of your own tears. the glass-like surface of the water reflects the sky like a perfect mirror
+You see a silver handheld looking glass. its surface appears to ripple, and the girl looking back at you doesn't appear quite right.
+It is bobbling along in the salty waves.
+You hear a faint odd melody, it almost sounds like *Twinkle Twinkle Little Star*, but the lyrics are definitely *Twinkle Twinkle Little Bat.
+
+A glint of silver catches your eye from the south.
+
+What do you want to do next?
+> take looking glass
+You found a curious looking glass
+
+What do you want to do next?
+> take music box
+You found a strange wooden music box
+You are spellbound by the beauty of this little music box.
+
+What do you want to do next?
+> go south
+You are in a tiny island in the middle of the pool of your own tears. cotton-candy colored rain clouds cling to the canopy of twisted trees. the air is thick with sorrow, it hangs like the charged anticipation before a thunderstorm.
+You come across a sleepy Gryphon, lounging on the beach, next to a turtle with his flipper flung dramatically across his eyes.
+
+What do you want to do next?
+> explore
+You are in a tiny island in the middle of the pool of your own tears. cotton-candy colored rain clouds cling to the canopy of twisted trees. the air is thick with sorrow, it hangs like the charged anticipation before a thunderstorm.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *north* there is a round riverstone path.
+It looks like it might lead to a pool of tears
+To the *west* there is :a stepping stone path leading across the pool to a large golden gate.
+It looks like it might lead to a garden
+
+Next you look around to see if there is anyone else here with you:
+A melancholy mock turtle, he is lamenting his previous life as a real turtle.
+A sleepy-looking gryphon with the head of an eagle and the body of a lion, you dont like the look of him.
+
+Finally you look around to see if there is anything useful here that you can take with you:
+A steaming bowl of rich, savory soup, echoing the Mock Turtle's lamentations. Though not made from a real Mock Turtle, it captures the essence of his melancholy tales.
+A short sword with a silver blade that hums with forgotten power, likely from the ancient-looking runes etched into its hilt.
+
+What do you want to do next?
+> take soup
+You found a bowl of imitation mock turtle soup
+
+What do you want to do next?
+> take sword
+You found an ancient short sword
+Your max attack damage has increased to 40.
+
+What do you want to do next?
+> give soup to gryphon
+You give The Gryphon the Faux Mock Turtle Soup
+Thank You! I love this!
+
+What do you want to do next?
+> give sword to gryphon
+Ancient Sword cannot be given as a gift
+
+What do you want to do next?
+> give soup to gryphon
+Faux Mock Turtle Soup is not in your inventory
+
+What do you want to do next?
+> go west
+You are unable to go this way right now
+You need to unlock it with the Garden key
+
+What do you want to do next?
+> unlock west
+You unlock the western exit
+
+What do you want to do next?
+> go east
+There is no exit in the direction you specified
+
+What do you want to do next?
+> go west
+You are in an opulent garden filled with red flowers dripping something bright red onto the deep green grass, and fountains flowing with aqua water that glimmers in the bright sunlight.
+A group of card gardeners, are anxiously painting white roses red. The White Rabbit scurries frantically southward, muttering about being very-very late for the trial.
+
+You watch as a royal procession passes by, first the courtiers dripping in diamonds
+After them come the royal children, skipping along in pairs, adorned with hearts.
+Then the guests, mostly Kings and Queens.
+Following them, the soldier of Hearts carries the King's crown on a crimson velvet cushion.
+At last, the Queen of hearts comes into view.
+When everyone has arrived you realize they are setting up to play the strangest game of croquet you have ever encountered
+They are using hedgehogs as the balls and pink flamingos as the clubs
+
+What do you want to do next?
+> explore
+You are in an opulent garden filled with red flowers dripping something bright red onto the deep green grass, and fountains flowing with aqua water that glimmers in the bright sunlight.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *north* there is a plain door.
+It looks like it might lead to a long hallway
+To the *north-east* there is a crystal flagstone path leading through a giant set of propped open arched doors.
+It looks like it might lead to a mushroom forest
+To the *east* there is a stepping stone path leading across the pool to a large golden gate.
+It looks like it might lead to a isle
+To the *south* there is a crystal flagstone path which leads through a giant set of arched castle doors that have been propped open.
+It looks like it might lead to a castle
+
+Next you look around to see if there is anyone else here with you:
+A queen dripping with heart-shaped rubies, her face is bright red, and she appears angry.
+A loyal card soldier in the Queens service.
+A sharp-tongued duchess with an odd fondness for pepper.
+A nervous-looking white rabbit with pink eyes and an iridescent pocket watch.
+
+Finally you look around to see if there is anything useful here that you can take with you:
+A rose that was once white, haphazardly painted in bright red. Specks of paint still drip from its petals.
+An adorable, prickly hedgehog used in a most unusual croquet match.
+A brilliant diamond lost by one of the Queen's courtiers. It glimmers with an ethereal blue light.
+A golden crown adorned with heart-shaped rubies.
+
+What do you want to do next?
+> take rose
+You found a painted red rose
+
+What do you want to do next?
+> take hedgehog
+You found a little hedgehog
+
+What do you want to do next?
+> take diamond
+You found a lost courtier diamond
+
+What do you want to do next?
+> take crown
+You found the king of heart's crown
+
+What do you want to do next?
+> talk to soldier
+You start talking to The Soldier
+"The kings crown is worth more than both our heads."
+
+What do you want to do next?
+> talk to duchess
+You start talking to The Duchess
+"I am famished and craving something sweet."
+
+What do you want to do next?
+> give duchess tart
+You give The Duchess the Tart
+Thank You! I love this!
+
+What do you want to do next?
+> talk to hare
+The March Hare is not in the location
+Please try rephrasing your input
+
+What do you want to do next?
+> give soldier rose
+You give The Soldier the Red Painted Rose
+Thank You! I love this!
+
+What do you want to do next?
+> stats
+Character Friendship Scores:
+The Cheshire Cat: 40
+The Queen of Hearts: 0
+The Mad Hatter: 40
+The March Hare: 40
+The White Rabbit: 0
+The Caterpillar: 0
+The Duchess: 40
+The Soldier: 40
+The Gryphon: 40
+The Mock Turtle: 40
+
+Total Friendship Score: 280 \ 400
+Total Treasure Score: 100 \ 2100
+Final Score: 380 \ 2500
+
+What do you want to do next?
+> give rabbit pocket watch
+You give The White Rabbit the Pocket Watch
+Thank You! I love this!
+
+What do you want to do next?
+> go north
+You are in the long hallway
+
+What do you want to do next?
+> go north
+You are in your cottage
+
+What do you want to do next?
+> place crown
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> place diamond
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> place hookah
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> place sword
+Ancient Sword is not considered a treasure, you can only place treasure in the cottage
+
+What do you want to do next?
+> place hedgehog
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> place looking glass
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> place music box
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> place teapot
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> go south
+You are in the long hallway
+
+What do you want to do next?
+> unlock south
+You unlock the southern exit
+
+What do you want to do next?
+> go south
+You are in the queen's garden
+
+What do you want to do next?
+> go south
+You are in a towering castle with walls made from glittering crystals. chandeliers crafted with heart-shaped rubies hang from the ceiling, casting the castle in an ominous red glow.
+You step into the grand courtroom of the Castle of Hearts, where a trial is about to commence.
+The Queen sits upon her throne, while a jury of creatures scribble nonsense notes.
+The Duchess stands accused of stealing the King's Crown.
+The White Rabbit, is acting as the herald.
+
+What do you want to do next?
+> explore
+You are in a towering castle with walls made from glittering crystals. chandeliers crafted with heart-shaped rubies hang from the ceiling, casting the castle in an ominous red glow.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *north* there is a crystal flagstone path. you hear the tinkling of water in the distance.
+It looks like it might lead to a garden
+
+Next you look around to see if there is anyone else here with you:
+A queen dripping with heart-shaped rubies, her face is bright red, and she appears angry.
+A sharp-tongued duchess with an odd fondness for pepper.
+A nervous-looking white rabbit with pink eyes and an iridescent pocket watch.
+
+Finally you look around to see if there is anything useful here that you can take with you:
+A tempting little tart with a heart-shaped vent revealing strawberry filling. It looks sweet enough to soften even the most volitile tempers.
+A fine pair of golden spectacles with delicate round rims.
+A sweet, squeaking guinea pig.
+A peculiarly shaped top hat.
+
+What do you want to do next?
+> take tart
+You found a strawberry tart
+
+What do you want to do next?
+> take spectacles
+You found the queen's spectacles
+
+What do you want to do next?
+> take guinea pig
+You found a little guinea pig
+
+What do you want to do next?
+> take hat
+You found the mad hatter's hat
+
+What do you want to do next?
+> talk to queen
+You start talking to The Queen of Hearts
+The Queen of Hearts yells, "Sentence first verdict afterwards!"
+
+What do you want to do next?
+> talk to rabbit
+You start talking to The Mock Turtle
+The White Rabbit adjusts his spectacles and clears his throat. "Silence in the court!"
+
+What do you want to do next?
+> talk to duchess
+Admit to the Duchess that you stole the King's Crown?(Yes/No)
+
+What do you want to do next?
+> no
+This decision weighs heavily on your conscience.
+Maybe there is another way to save the Duchess.
+
+What do you want to do next?
+> hint
+The Queen looks hungry
+
+What do you want to do next?
+> give queen tart
+You give The Queen of Hearts the Tart
+Thank You! I love this!
+The Queen seems so enraptured with the tart that she seems to have forgotten all about the Duchess.
+The Queen leaves to go demand her cook learn this tart recipe.
+Everyone else decides to leave while they have the chance.
+
+What do you want to do next?
+> explore
+You are in a towering castle with walls made from glittering crystals. chandeliers crafted with heart-shaped rubies hang from the ceiling, casting the castle in an ominous red glow.
+
+First you scan the perimeter and make a mental note of all of the exits:
+To the *north* there is a crystal flagstone path. you hear the tinkling of water in the distance.
+It looks like it might lead to a garden
+
+What do you want to do next?
+> go north
+You are in the queen's garden
+
+What do you want to do next?
+> go north
+You are in the long hallway
+
+What do you want to do next?
+> unlock east
+You unlock the eastern exit
+
+What do you want to do next?
+> go east
+You are in the mushroom forest
+
+What do you want to do next?
+> talk to caterpillar
+You start talking to The Caterpillar
+The caterpillar squints at you through a cloud of purple ghostly butterflies.
+You are not sure if he can actually see you.
+
+"Who are you?" demanded the Caterpillar.
+"I hardly know," said Alice, "because I'm not myself."
+"You must be yourself!" retorted the Caterpillar, quite argumentatively.
+
+You have never met such a contrarian caterpillar.
+You quickly end the conversation.
+
+What do you want to do next?
+> give caterpillar spectacles
+You give The Caterpillar the Queen's Spectacles
+Thank You! I love this!
+
+What do you want to do next?
+> go west
+You are in the long hallway
+
+What do you want to do next?
+> go north
+You are in your cottage
+
+What do you want to do next?
+> store guinea pig
+The treasure has been placed in the cottage
+
+What do you want to do next?
+> store hat
+The treasure has been placed in the cottage
+
+You have befriended every character and collected and stored every treasure.
+You have also managed to survive all of the trials of wonderland.
+
+You wake up feeling well rested with your head in your sisters lap, as she braids daisy into your hair.
+You feel a great sense of accomplishment.
+
+Final stats:
+Character Friendship Scores:
+The Cheshire Cat: 40
+The Queen of Hearts: 40
+The Mad Hatter: 40
+The March Hare: 40
+The White Rabbit: 40
+The Caterpillar: 40
+The Duchess: 40
+The Soldier: 40
+The Gryphon: 40
+The Mock Turtle: 40
+
+Total Friendship Score: 400 \ 400
+Total Treasure Score: 2100 \ 2100
+Final Score: 2500 \ 2500
+Alice's Inventory:
+Cottage Key
+        Item Type: Key
+        Description: A sturdy brass key. It looks like it unlocks doors leading to a cottage.
+Mushroom Key
+        Item Type: Key
+        Description: A strange key shaped like a mushroom. It looks like it unlocks doors leading to a mushroom forest.
+Garden Key
+        Item Type: Key
+        Description: An ornate golden key that glimmers warmly. The golden vines make you think it unlocks doors leading to a garden.
+Marmalade Jar
+        Item Type: Weapon
+        Description: A broken jar of marmalade. It is sharp and still a little sticky.
+Ancient Sword
+        Item Type: Weapon
+        Description: A short sword with a silver blade that hums with forgotten power, likely from the ancient-looking runes etched into its hilt.
+
+Cottage Inventory:
+Daisy Chain
+        Item Type: Treasure
+        Description: A daisy chain made by your sister and placed upon your head while you were sleeping.
+Fan
+        Item Type: Treasure
+        Description: A dainty paper fan painted with swirling motifs of playing cards.
+King's Crown
+        Item Type: Treasure
+        Description: A golden crown adorned with heart-shaped rubies.
+Lost Courtier Diamond
+        Item Type: Treasure
+        Description: A brilliant diamond lost by one of the Queen's courtiers. It glimmers with an ethereal blue light.
+Hookah
+        Item Type: Treasure
+        Description: A hookah crafted from deep indigo glass embellished with gold. The violet smoke billowing from it is shaped like ghostly butterflies.
+Hedgehog
+        Item Type: Treasure
+        Description: An adorable, prickly hedgehog used in a most unusual croquet match.
+Looking Glass
+        Item Type: Treasure
+        Description: A silver handheld looking glass. Its surface appears to ripple, and the girl looking back at you doesn't appear quite right.
+Music Box
+        Item Type: Treasure
+        Description: An intricate little wooden music box. Although it is playing an odd song, it almost sounds like *Twinkle Twinkle Little Star*, but the lyrics are *Twinkle Twinkle Little Bat*.
+Teapot
+        Item Type: Treasure
+        Description: A porcelain teapot with delicate golden details. No matter how much time passes, the tea never seems to cool.
+Guinea Pig
+        Item Type: Treasure
+        Description: A sweet, squeaking guinea pig.
+Hatter's Hat
+        Item Type: Treasure
+        Description: A peculiarly shaped top hat.

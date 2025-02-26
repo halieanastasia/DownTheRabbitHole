@@ -1,0 +1,86 @@
+Keywords:
+Yes:yes
+No:no
+Help:help h instruction instructions
+End:quit q end endgame end-game
+Inventory:inventory invent i
+Hint:hint
+Stats:stat stats score
+*****
+Verbs:
+Enter:enter go walk walk-through 
+Pick Up:pick-up pick take pickup steal
+Use:use eat drink consume
+Unlock:unlock
+Gift:give gift
+Follow:follow
+Talk:talk speak speak-to
+Explore:explore look
+Examine:examine view
+Attack:attack fight
+Place Treasure:store place
+*****
+Characters:
+Cheshire Cat:cat cheshire cheshire-cat
+The Queen:queen
+The Mad Hatter:hatter mad-hatter
+The March Hare:hare march-hare
+The White Rabbit:rabbit white-rabbit
+The Caterpillar:caterpillar
+The Duchess:duchess
+The Soldier:soldier card-soldier
+The Gryphon:gryphon
+The Mock Turtle:turtle mock-turtle
+*****
+Locations:
+Cottage:cottage
+Meadow:meadow
+Rabbit Hole:rabbit-hole hole
+Long Hallway:hallway long-hallway
+Cottage:cottage safe-room
+Mushroom Forest:mushroom forest mushroom-forest
+Hare's Lawn:lawn tea-party
+Pool of Tears:pool pool-of-tears
+Isle of Sorrow:sorrow isle
+Garden:garden
+Castle:castle
+*****
+Items:
+Hallway Key:hallway-key
+Garden Key:garden-key
+Cottage Key:cottage-key
+Mushroom Key:mushroom-key
+Milk:milk milk-bottle milk-carton
+Butter:butter
+Faux Turtle Soup:turtle-soup soup turtle
+Pocket Watch:watch pocket-watch
+Kid Gloves:gloves kids-gloves
+Painted Rose:rose painted-rose red-rose
+Tart:tart pastry
+Spectacles:spectacles glasses
+Daisy Chain:daisy daisychain daisy-chain flower-crown daisy-crown
+Looking Glass:looking-glass glass mirror
+Music Box:music box music-box
+Fan:fan
+Hookah:hookah pipe
+Hedgehog:hedgehog
+Guinea Pig:guinea-pig guinea pig guineapig
+Teapot:teapot
+Courtier Diamond:diamond
+King's Crown:crown kings-crown
+Hatter's Hat:hat hatter's-hat
+Drink Me Bottle:bottle drink-me liquid drink potion shrink shrinking
+Eat Me Cake:cake eat-me
+Marmalade Jar:marmalade jar marmalade-jar
+Ancient Sword:sword ancient-sword
+*****
+Directions:
+North:north n northern
+North East:north-east ne
+East:east e eastern
+South East:south-east se
+South:south s southern
+South West:south-west sw
+West:west w western
+North West:north-west nw
+*****

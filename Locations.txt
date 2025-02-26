@@ -1,0 +1,79 @@
+Name:Null Location
+Long Description:Null
+Short Description:Null
+*****
+Name:Meadow
+Long Description:A meadow filled with wildflowers the air smells like sunshine and over ripe berries.
+Short Description:The meadow
+Hint:Maybe you should follow the rabbit.
+Exit:S-Rabbit Hole:A trail of tall grass with a trail of rabbit prints leading to the west.*unlocked*
+*****
+Name:Rabbit Hole
+Long Description:The bottom of a deep, dark rabbit hole.
+Short Description:The rabbit hole
+Hint:That marmalade jar looks sharp, it might make a good weapon.
+Exit:E-Long Hallway:A door that glows brightly in contrast with the dark rabbit hole.*unlocked*
+*****
+Name:Long Hallway
+Long Description:A long hallway with a door on each wall.
+Short Description:The long hallway
+Hint:That cat looks thirsty
+Exit:N-Cottage:An arched door with smooth river stones outlining it.*locked*CottageKey
+Exit:E-Mushroom Forest:A mushroom and moss covered door made from tree bark.*locked*MushroomKey
+Exit:S-Garden:A door covered in golden vines. Each vine is dotted with delicate flowers inlaid with emeralds.*locked*GardenKey
+Exit:W-Rabbit Hole:A plain door, on the door is a shiny brass plate with the name "W. Rabbit" engraved upon it.*unlocked*
+Exit:NE-Hare's Lawn:A door that appears to be wearing a top-hat.*locked*
+*****
+Name:Cottage
+Long Description:A small, clearly abandoned cottage. Its a bit dusty and covered in ivy and moss, but it would still make a good place to store your belongings. Theres even an area suitable for pets.
+Short Description:Your cottage
+Hint:This would be a great place to keep any treasures you find on your adventures. Try to Store/Place a treasure.
+Exit:S-Long Hallway:A plain door*unlocked*
+Exit:E-Hare's Lawn:A colourful wooden path, painted with red roses along the sides*unlocked*
+*****
+Name:Mushroom Forest
+Long Description:A hazy blue forest where the mushrooms have grown taller than the tallest trees.
+Short Description:The mushroom forest
+Hint:You're starting to feel hungry, maybe there is some cake around here you can eat.
+Exit:N-Hare's Lawn:A colourful wooden path, with red roses painted along the sides.*unlocked*
+Exit:E-Pool of Tears:A rock wall with a narrow crack running up the center, you might be able to squeeze through.*locked*PoolKey
+Exit:SW-Garden:A golden gate with red roses in the distance, a crisp wind blows from this direction.*locked*GardenKey
+Exit:W-Long Hallway:A plain door.*unlocked*
+*****
+Name:Hare's Lawn
+Long Description: A little clearing in front of a hodgepodge of colourful rooms stacked together haphazardly in the vague shape of a bunny ears. Under the cover of an ancient weeping willow, a riotous tea party is underway.
+Short Description:The march hare's lawn
+Hint:You really should try to make some friends.
+Exit:S-Mushroom Forest:A gate leading to a long, twisting path of round stepping stones. Moss has begun to creep over the edges, dotted with tiny glowing mushrooms*locked*MushroomKey
+Exit:W-Cottage:A wooden path*unlocked*
+Exit:SW-Long Hallway:A plain door.*unlocked*
+*****
+Name:Pool of Tears
+Long Description:A vast pool of your own tears. The glass-like surface of the water reflects the sky like a perfect mirror
+Short Description:The Pool of Tears
+Hint:That island in the distance looks interesting
+Exit:W-Mushroom Forest:A rock wall with a narrow crack running up the center, you might be able to squeeze through.*unlocked*
+Exit:S-Isle:A round river stone path leads out into the middle of the pool of tears.*unlocked*
+*****
+Name:Isle
+Long Description:A tiny island in the middle of the pool of your own tears. Cotton-candy colored rain clouds cling to the canopy of twisted trees. The air is thick with sorrow, it hangs like the charged anticipation before a thunderstorm.
+Short Description:The Isle of Sorrow
+Hint:You should see if there is anything useful you can bring with you
+Exit:N-Pool of Tears:A round riverstone path.*unlocked*
+Exit:W-Garden::A stepping stone path leading across the pool to a large golden gate.*locked*GardenKey
+*****
+Name:Garden
+Long Description:An opulent garden filled with red flowers dripping something bright red onto the deep green grass, and fountains flowing with aqua water that glimmers in the bright sunlight.
+Short Description:The queen's garden
+Hint:You should probably avoid playing croquet if it is possilbe
+Exit:N-Long Hallway:A plain door.*unlocked*
+Exit:NE-Mushroom Forest:A crystal flagstone path leading through a giant set of propped open arched doors.*unlocked*
+Exit:E-Isle:A stepping stone path leading across the pool to a large golden gate.*locked*
+Exit:S-Castle:A crystal flagstone path which leads through a giant set of arched castle doors that have been propped open.*unlocked*
+*****
+Name:Castle
+Long Description:A towering castle with walls made from glittering crystals. Chandeliers crafted with heart-shaped rubies hang from the ceiling, casting the castle in an ominous red glow.
+Short Description:The Castle of Hearts
+Hint:The Queen looks hungry
+Exit:N-Garden:A crystal flagstone path. You hear the tinkling of water in the distance.*unlocked*
+*****

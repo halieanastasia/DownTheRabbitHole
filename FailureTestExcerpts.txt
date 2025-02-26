@@ -1,0 +1,41 @@
+[Fastest way to die]
+...
+What do you want to do next?
+> take jar
+You found a broken jar of marmalade
+Your max attack damage has increased to 30.
+
+What do you want to do next?
+> go east
+You are in a long hallway with a door on each wall.
+On that long fall down the rabbit-hole you've had a minute to process the fact that you may never be able to go home.
+It might be a good idea to try and make some friends.
+Maybe if you're luck you will find some treasure.
+
+What do you want to do next?
+> fight cat
+The fight begins...
+Your HP: 50
+The Cheshire Cats HP: 60
+
+You attack The Cheshire Cat
+Their HP drops to 34
+
+The Cheshire Cat attacks you
+Your HP drops to 27
+
+You attack The Cheshire Cat
+Their HP drops to 16
+
+The Cheshire Cat attacks you
+Your HP drops to 13
+
+You attack The Cheshire Cat
+Their HP drops to -8
+
+You win the fight
+The Cheshire Cat flees the fight
+Unfortunately you never find your way out and eventually starve to death.
+You have plenty of time to think about how you should have tried to befriend the Cheshire Cat instead.
+...
+
