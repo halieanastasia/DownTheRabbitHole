@@ -147,6 +147,7 @@
     <Text Include="Instructions.txt" />
     <Text Include="Items.txt" />
     <Text Include="Locations.txt" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions.h" />

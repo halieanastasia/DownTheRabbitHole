@@ -257,7 +257,7 @@ Bad Data Case 10 (Invalid Unlock Actions):
 
 	[The key must be in the players inventory]
 	> unlock south
-	You need the Mushroom Forest Key to unlock this exit 
+	You need the Mushroom Forest Key to unlock this exit
 
 Bad Data Case 11 (A file is missing or not loaded correctly):
 	[The game fails to initialize and exits the game]
