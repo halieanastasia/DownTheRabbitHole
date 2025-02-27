@@ -1,3 +1,6 @@
+Download and run main.exe
+
+Or
 Compile (assuming g++ is installed):
 	g++ -o main Actions.cpp Alice.cpp Characters.cpp Control.cpp FileReader.cpp Game.cpp GameObject.cpp Items.cpp Locations.cpp main.cpp Utilities.cpp
 Execution (assuming your terminal is Windows Command Prompt):
